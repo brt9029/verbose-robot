@@ -1,11 +1,29 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
+  const licenses = [
+    {
+      license: "MIT",
+      link: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]"
+    },
+    {
+      license: "GPLv2",
+      link: "[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)]"
+    },
+    {
+      license: "Apache",
+      link: "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]"
+    },
+  ];
   if(!license) {
     return "";
   }
 
-  return `[![License](https://img.shields.io/badge/License-${license}.svg)]`;
+  for(let i = 0; i < licenses.length; i++) {
+    if(license === licenses[i].license) {
+      return `${licenses[i].link}`
+    };
+  };
 };
 
 // TODO: Create a function that returns the license link
@@ -57,24 +75,24 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(license)}${renderLicenseLink(license)}
 
     # Description #
-    - ${description}
-    - Made using: ${languages}
+    ${description}
+    Made using: ${languages}
 
     # Installation #
-    - ${install}
+    ${install}
 
     # Usage #
-    - ${usage}
+    ${usage}
 
     # Testing #
-    - ${test}
+    ${test}
 
     # Contributors #
     Made by: ${contributor}
 
     # Feedback #
-    GitHub Profile: ${github}
-    E-Mail: ${email}
+    GitHub Profile: [${github}](www.github.com/${github} "GitHub Profile Link")
+    E-Mail: <${email}>
 
     ${renderLicenseSection(license)}
   `;

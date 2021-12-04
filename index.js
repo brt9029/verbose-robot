@@ -79,7 +79,15 @@ const questions = [
     {
         type: "input",
         name: "contributor",
-        message: "Who were the contributors to this project?"
+        message: "Who were the contributors to this project?",
+        validate: contributorInput => {
+            if(contributorInput) {
+                return true;
+            } else {
+                console.log("Please enter at least one contributor");
+                return false;
+            }
+        }
     },
     {
         type: "input",
@@ -89,12 +97,28 @@ const questions = [
     {
         type: "input",
         name: "github",
-        message: "What is your GitHub username?"
+        message: "What is your GitHub username?",
+        validate: githubInput => {
+            if(githubInput) {
+                return true;
+            } else {
+                console.log("Please enter your GitHub username!");
+                return false;
+            }
+        }
     },
     {
         type: "input",
         name: "email",
-        message: "Provide an e-mail where you can be contacted"
+        message: "Provide an e-mail where you can be contacted",
+        validate: emailInput => {
+            if(emailInput) {
+                return true;
+            } else {
+                console.log("Please enter an e-mail address where you may be contacted!");
+                return false;
+            }
+        }
     }
 ];
 
