@@ -74,23 +74,23 @@ function generateMarkdown(data) {
   const markdown = `# ${title} #
   ${renderLicenseBadge(license)}${renderLicenseLink(license)}
 
-    # Description #
+    # Description
     ${description}
     Made using: ${languages}
 
-    # Installation #
+    # Installation
     ${install}
 
-    # Usage #
+    # Usage
     ${usage}
 
-    # Testing #
+    # Testing
     ${test}
 
-    # Contributors #
+    # Contributors
     Made by: ${contributor}
 
-    # Feedback #
+    # Feedback
     GitHub Profile: [${github}](www.github.com/${github} "GitHub Profile Link")
     E-Mail: <${email}>
 
