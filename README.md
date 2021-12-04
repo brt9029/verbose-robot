@@ -4,8 +4,8 @@
 - Generate a README.md file for your Project using node.js (also gives the README file the name of the project)
 
 ## Installation
-- Download the repo
-- Navigate to where the repo was downloaded
+- Clone the repository
+- Navigate to where the repo was saved
 - Type in ```npm install``` for the dependencies requried (inquirer)
 - Run the app with ```node index```
 
