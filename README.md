@@ -1,7 +1,7 @@
 # README Generator
 
 ## Description
-- Generate a README.md file for your Project (also gives the README file the name of the project)
+- Generate a README.md file for your Project using node.js (also gives the README file the name of the project)
 
 ## Installation
 - Download the repo
