@@ -63,38 +63,38 @@ function renderLicenseSection(license) {
   }
 
   return `
-    # License #
-    This application is covered under ${license}
+  ## License
+  This application is covered under ${license}
   `
 };
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   const { title, description, languages, install, usage, test, contributor, license, github, email } = data
-  const markdown = `# ${title} #
+  const markdown = `# ${title}
   ${renderLicenseBadge(license)}${renderLicenseLink(license)}
 
-    # Description
-    ${description}
-    Made using: ${languages}
+  ## Description
+  ${description}
+  Made using: ${languages}
 
-    # Installation
-    ${install}
+  ## Installation
+  ${install}
 
-    # Usage
-    ${usage}
+  ## Usage
+  ${usage}
 
-    # Testing
-    ${test}
+  ## Testing
+  ${test}
 
-    # Contributors
-    Made by: ${contributor}
+  ## Contributors
+  Made by: ${contributor}
 
-    # Feedback
-    GitHub Profile: [${github}](www.github.com/${github} "GitHub Profile Link")
-    E-Mail: <${email}>
+  ## Feedback
+  - GitHub Profile: [${github}](www.github.com/${github} "GitHub Profile Link")
+  - E-Mail: <${email}>
 
-    ${renderLicenseSection(license)}
+  ${renderLicenseSection(license)}
   `;
 
   return [title, markdown];
