@@ -19,9 +19,7 @@ function renderLicenseBadge(license) {
   for(let i = 0; i < licenses.length; i++) {
     if(license === licenses[i].license) {
       return `${licenses[i].link}`
-    } else {
-      return ""
-    };
+    }
   };
 };
 
@@ -46,23 +44,17 @@ function renderLicenseLink(license) {
   for(let i = 0; i < licenses.length; i++) {
     if(license === licenses[i].license) {
       return `(${licenses[i].link})`
-    } else {
-      return ""
-    };
+    }
   };
 };
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if(license != "None") {
       return `
 ## License
 This application is covered under ${license}
   `
-  } else {
-    return "";
-  }
 };
 
 // TODO: Create a function to generate markdown for README
@@ -74,6 +66,13 @@ function generateMarkdown(data) {
 ## Description
 ${description}
 Made using: ${languages}
+
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Testing](#testing)
+* [Contributors](#contributors)
+* [License](#license)
 
 ## Installation
 ${install}

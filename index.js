@@ -72,10 +72,10 @@ const questions = [
         }
     },
     {
-        type: "checkbox",
+        type: "list",
         name: "license",
         message: "Which license was used?",
-        choices: ["MIT", "GPLv2", "Apache", "None"],
+        choices: ["MIT", new inquirer.Separator(), "GPLv2", new inquirer.Separator(), "Apache"],
         validate: licenseInput => {
             if(licenseInput.length > 0) {
                 return true;
