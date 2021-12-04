@@ -15,13 +15,12 @@ function renderLicenseBadge(license) {
       link: "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]"
     },
   ];
-  if(!license) {
-    return "";
-  }
 
   for(let i = 0; i < licenses.length; i++) {
     if(license === licenses[i].license) {
       return `${licenses[i].link}`
+    } else {
+      return ""
     };
   };
 };
@@ -43,14 +42,12 @@ function renderLicenseLink(license) {
       link: "https://opensource.org/licenses/Apache-2.0"
     },
   ];
-
-  if(!license) {
-    return "";
-  }
   
   for(let i = 0; i < licenses.length; i++) {
     if(license === licenses[i].license) {
       return `(${licenses[i].link})`
+    } else {
+      return ""
     };
   };
 };
@@ -58,14 +55,14 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if(!license){
+  if(license != "None") {
+      return `
+## License
+This application is covered under ${license}
+  `
+  } else {
     return "";
   }
-
-  return `
-  ## License
-  This application is covered under ${license}
-  `
 };
 
 // TODO: Create a function to generate markdown for README
@@ -74,27 +71,27 @@ function generateMarkdown(data) {
   const markdown = `# ${title}
   ${renderLicenseBadge(license)}${renderLicenseLink(license)}
 
-  ## Description
-  ${description}
-  Made using: ${languages}
+## Description
+${description}
+Made using: ${languages}
 
-  ## Installation
-  ${install}
+## Installation
+${install}
 
-  ## Usage
-  ${usage}
+## Usage
+${usage}
 
-  ## Testing
-  ${test}
+## Testing
+${test}
 
-  ## Contributors
-  Made by: ${contributor}
+## Contributors
+Made by: ${contributor}
 
-  ## Feedback
-  - GitHub Profile: [${github}](www.github.com/${github} "GitHub Profile Link")
-  - E-Mail: <${email}>
+## Feedback
+- GitHub Profile: [${github}](www.github.com/${github} "GitHub Profile Link")
+- E-Mail: <${email}>
 
-  ${renderLicenseSection(license)}
+${renderLicenseSection(license)}
   `;
 
   return [title, markdown];

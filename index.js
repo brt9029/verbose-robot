@@ -61,14 +61,23 @@ const questions = [
     {
         type: "input",
         name: "usage",
-        message: "How should this Project be used?"
+        message: "How should this Project be used?",
+        validate: usageInput => {
+            if(usageInput) {
+                return true;
+            } else {
+                console.log("Please enter how to use this Project!");
+                return false;
+            }
+        }
     },
     {
-        type: "input",
+        type: "checkbox",
         name: "license",
         message: "Which license was used?",
+        choices: ["MIT", "GPLv2", "Apache", "None"],
         validate: licenseInput => {
-            if(licenseInput) {
+            if(licenseInput.length > 0) {
                 return true;
             } else {
                 console.log();
@@ -92,7 +101,15 @@ const questions = [
     {
         type: "input",
         name: "test",
-        message: "How should the tests be run?"
+        message: "How should the tests be run?",
+        validate: testInput => {
+            if(testInput) {
+                return true;
+            } else {
+                console.log("Please enter how the tests should be ran");
+                return false;
+            }
+        }
     },
     {
         type: "input",
